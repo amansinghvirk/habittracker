@@ -1,34 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Habit Tracker</title>
-        <link rel="stylesheet" href="static/css/main.css" />
-    </head>
-    <body>
-        <header class="navbar">
-            <div class="navbar__brand">
-                <img class="navbar__logo" src="static/images/logo_dark.svg" alt="Habit Tracker />
-            </div>
-        </header>
-        
-        <main class="main">   
+{% extends "layout.html" %} 
 
-    
-        </main>
-        <footer class="footer">
-            <div class="footer__content">
-                <section class="left">
-                    <a class="footer__item">Mady be Aman Virk</a>
-                </section>
-                <section class="right">
-                    <div class="footer__column">
-                        <a class="footer__item">About</a>
-                        <a class="footer__item">How this was made</a>
-                    </div>
-                </section>
-            </div>
-        </footer>
-    </body>
-</html>
+{% block main_content %} 
+    <form class="form" method="POST">
+        <textarea class="form__input" id="habit" name="habit" rows="3" placeholder="Add a new daily habit">
+        </textarea>
+        <button class="form__button" type="submit">Add</button>
+    </form>
+{% endblock %}

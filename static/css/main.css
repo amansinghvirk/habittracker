@@ -10,6 +10,13 @@ body {
     box-sizing: border-box;
 }
 
+.header,
+.main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
 .navbar {
     background-color: rgb(194, 25, 25);
     max-width: 1000px;
@@ -19,6 +26,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     font-size: 24px;
+    align-items: center;
 }
 
 .navbar__brand {
@@ -27,9 +35,10 @@ body {
 }
 
 .navbar__logo {
-    margin-right: 30px;
+    margin-right: 10px;
     display: flex;
     max-width: 50px;
+    padding: 5px;
 }
 
 .navbar__navigation {
@@ -46,21 +55,19 @@ body {
 
 .navbar__link {
     text-decoration: none;
-    color: inherit;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+.navbar__link:hover {
+    color: rgb(183, 211, 57);
+    transition: color 0.1s ease-in-out;
 }
 
 .main {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.container__youtube{
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 0 0px;
-    max-height: 200px;
-    background-color: green;
 }
 
 .form {
@@ -71,6 +78,13 @@ body {
 
 .form__input {
     width: 100%;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    resize: none;
+    border: 1px solid rgb(183, 211, 57);
+    background-color: rgb(237, 236, 236);
+    margin-bottom: 1rem;
 }
 
 .form__label {
@@ -78,47 +92,26 @@ body {
     margin-bottom: 10px;
 }
 
-.form__textarea {
-    width: inherit;
-    font-size: 18px;
-    padding: 12px 12px;
-    border: none;
-    background-color: #eff7fa;
-    margin-bottom: 10px;
-}
-
-.form__submit {
-    background-color: #59AAC3;
+.form__button {
+    background-color: rgb(147, 172, 38);
     border: none;
     font-size: 18px;
     font-weight: bold;
     padding: 5px 30px;
-    border-radius: 20px;
+    border-radius: 6px;
+    border: none;
     color: white;
     cursor: pointer;
 }
 
-.form__submit:hover {
-    background-color:aquamarine;
+.form__button:hover {
+    background-color:rgb(183, 211, 57);
 }
 
-.entry {
-    margin-top: 50px;
+.habit {
+    background-color: aliceblue;
 }
 
-.entry__title {
-    display: inline;
-    font-size: 16px;
-}
-
-.entry__date {
-    color:#59AAC3;
-}
-
-.entry__content {
-    font-size: 16px;
-    line-height: 150%;
-}
 
 .footer {
     background-color: rgb(194, 25, 25);
