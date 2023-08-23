@@ -127,7 +127,7 @@ body {
 
 
 .dates__link--current {
-    background: rgb(161, 209, 39);
+    background: rgb(72, 211, 250);
 }
 
 .dates__link:not(.dates__link--current):hover {
@@ -211,25 +211,42 @@ body {
     text-decoration: underline;
 }
 
-.habit {
+
+.habit-item {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 26px;
-    padding: 20px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    padding: 5px;
+    margin: 1px 1px 1px 1px;
     background-color: white;
-    border: 3px solid black;
-    border-radius: 6px;
+    border: 1px solid rgb(240, 240, 177);
+    border-radius: 2px;
 }
 
-.habit:not(.completed) {
+.habit {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: inherit;
+    font-family: inherit;
     padding: 0;
+    background-color: white;
 }
 
-.habit:not(.complete):hover {
-    background-color: antiquewhite;
+.habit__info {
+    background-color: rgb(248, 242, 242);
+}
+
+.habit__info:not(.completed) {
+    padding: 0;
+    background-color: rgb(241, 243, 242);
+}
+
+.habit__info:not(.completed):hover {
+    background-color: rgb(253, 253, 253);
 }
 
 .habit__icon {
@@ -248,12 +265,11 @@ body {
 .habit__button {
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 5px;
     font-size: inherit;
     font-family: inherit;
     text-align: left;
     border: none;
-    background-color: unset;
+    background-color: white;
     cursor: pointer;
-
 }

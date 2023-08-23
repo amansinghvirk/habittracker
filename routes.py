@@ -52,6 +52,7 @@ def add_habit():
             "added": today, 
             "name": habit
         })
+        return redirect(url_for("habits.index"))
 
     return render_template(
         "add_habit.html", 
@@ -64,8 +65,32 @@ def complete():
     date_string = request.form.get("date")
     habit = request.form.get("habitId")
     date = datetime.datetime.fromisoformat(date_string)
-    current_app.db.completions.insert_one(
-        {"date": date, "habit": habit}
+
+    if date <= today_at_midnight():
+        current_app.db.completions.insert_one(
+            {"date": date, "habit": habit}
+        )
+
+    return redirect(url_for("habits.index", date=date_string))
+
+@pages.route("/delete", methods=["POST"])
+def delete():
+    date_string = request.form.get("date")
+    habit_id = request.form.get("habitId")
+    date = datetime.datetime.fromisoformat(date_string)
+
+    # Delete first habits marked 
+    habits_to_delete = current_app.db.habits.find(
+        {"_id": habit_id}
     )
+    for habit in habits_to_delete:
+        current_app.db.habits.delete_one(habit)
+
+    # Then first habits marked as completed
+    completed_habits_to_delete = current_app.db.completions.find(
+        {"habit": habit_id}
+    )
+    for habit in completed_habits_to_delete:
+        current_app.db.completions.delete_one(habit)
 
     return redirect(url_for("habits.index", date=date_string))
