@@ -8,20 +8,24 @@ html {
 
 body {
     box-sizing: border-box;
+    background: url('/static/images/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .header,
 .main {
-    max-width: 40rem;
+    margin: 0;
     margin: 0 auto;
     padding: 1rem;
+    
 }
 
 .navbar {
-    background-color: rgb(194, 25, 25);
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 20px;
+    background-color: rgb(0, 0, 0, .5);
+    max-width: 100%;
+    margin: 5px auto;
+    padding: 0 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -60,30 +64,36 @@ body {
     font-size: 18px;
 }
 .navbar__link:hover {
-    color: rgb(183, 211, 57);
+    color: rgb(255, 120, 120);
     transition: color 0.1s ease-in-out;
 }
 
 .main {
     max-width: 800px;
+    height: 100%;
+    min-height: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px 0px 20px 0px;
+    background-color: rgb(0, 0, 0, .6);
+    border-radius: 25px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    color: white;
 }
 
 .form__input {
     width: 100%;
     padding: 1rem;
+    color: white;
     font-family: inherit;
     font-size: inherit;
     resize: none;
-    border: 1px solid rgb(183, 211, 57);
-    background-color: rgb(237, 236, 236);
+    border: none;
+    background-color: rgb(0, 0, 0, .7);
     margin-bottom: 1rem;
 }
 
@@ -93,7 +103,7 @@ body {
 }
 
 .form__button {
-    background-color: rgb(147, 172, 38);
+    background-color: rgb(255, 30, 30);
     border: none;
     font-size: 18px;
     font-weight: bold;
@@ -105,15 +115,16 @@ body {
 }
 
 .form__button:hover {
-    background-color:rgb(183, 211, 57);
+    background-color:rgb(255, 100, 100);
 }
 
 .dates {
     display: flex;
     justify-content: space-around;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
+    background-color: rgba(235, 3, 3, 0.3);
 }
 
 .dates__link {
@@ -121,17 +132,16 @@ body {
     text-decoration: none;
     outline: none;
     padding: 0.25rem 0.75rem;
-
     border-radius: 6px;
 }
 
 
 .dates__link--current {
-    background: rgb(72, 211, 250);
+    background: rgb(255, 30, 30);
 }
 
 .dates__link:not(.dates__link--current):hover {
-    background: rgb(151, 221, 240);
+    background: rgb(255, 100, 100);
 }
 
 .date {
@@ -161,15 +171,9 @@ body {
     }
 }
 
-
-.habit {
-    background-color: aliceblue;
-}
-
-
 .footer {
-    background-color: rgb(194, 25, 25);
-    padding: 20px 0;
+    background-color: rgb(0, 0, 0, .5);
+    padding: 10px 0;
     margin-top: 40px;
     border-top: 4px solid rgb(254, 201, 201);
     color: white;
@@ -212,16 +216,18 @@ body {
 }
 
 
+
 .habit-item {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px;
-    margin: 1px 1px 1px 1px;
-    background-color: white;
-    border: 1px solid rgb(240, 240, 177);
+    margin: 5px 0px 0px 0px;
+    color: white;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
     border-radius: 2px;
 }
 
@@ -232,24 +238,26 @@ body {
     justify-content: space-between;
     font-size: inherit;
     font-family: inherit;
-    padding: 0;
-    background-color: white;
+    padding: 2px 0px 2px 0px;
+    background-color: inherit;
 }
 
 .habit__info {
-    background-color: rgb(248, 242, 242);
+    background-color: inherit;
 }
 
-.habit__info:not(.completed) {
-    padding: 0;
-    background-color: rgb(241, 243, 242);
+.habit:not(.completed) {
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.habit__info:not(.completed):hover {
-    background-color: rgb(253, 253, 253);
+.habit:not(.completed):hover {
+    color: rgba(251, 57, 57, 0.884);
 }
 
 .habit__icon {
+    padding: 0px 0px 0px 0px;
+    margin-left: 5px;
+    margin-right: 5px;
     width: 1em;
     height: 1em;
 }
@@ -265,11 +273,17 @@ body {
 .habit__button {
     display: block;
     width: 100%;
-    padding: 5px;
+    padding: 0px 0px 0px 0px;
+    margin-left: 1px;
     font-size: inherit;
     font-family: inherit;
     text-align: left;
     border: none;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
     cursor: pointer;
+}
+
+.complete-icon {
+    width: 25px;
 }
