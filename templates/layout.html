@@ -10,12 +10,12 @@
     <body>
         <header class="navbar">
             <div class="navbar__brand">
-                    <a href="{{ url_for('index')}}">
+                    <a href="{{ url_for('habits.index')}}">
                         <img class="navbar__logo" src="static/images/logo_dark.svg" alt="Habit Tracker" />
                     </a>
             </div>
             {% if "add" not in request.endpoint %} 
-                <a href="{{ url_for('add_habit')}}" class="navbar__link">+ Add new</a>
+                <a href="{{ url_for('habits.add_habit')}}" class="navbar__link">+ Add new</a>
             {% endif %}
         </header>
         
@@ -24,7 +24,7 @@
                 {% for date in date_range(selected_date) %} 
                     <a 
                         class="dates__link {{ 'dates__link--current' if loop.index0 == 3 else '' }}"
-                        href="{{ url_for('index', date=date) }}">
+                        href="{{ url_for('habits.index', date=date) }}">
                         <time class="date", datetime="{{ date }}">
                             <span>{{ date.strftime("%a")}}</span>
                             <span>{{ date.strftime("%d")}}</span>
